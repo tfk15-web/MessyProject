@@ -52,9 +52,14 @@ public class User
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
+        if (o instanceof User other){
+            return this.id == other.id;
         }
         return false;
+    }
+
+    // pæn udprint af user
+    public String toString(){
+        return String.format("%s;%d", this.name, this.id);
     }
 }
