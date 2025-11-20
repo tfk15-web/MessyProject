@@ -4,7 +4,7 @@ public class User
     public String c_nam;
     public String address;
 
-    public User(int i, String n){
+    public User(String n, int i){
         c_id = i;
         if(n.length() < 0 || n.length() > 100) // Testing length
         {
