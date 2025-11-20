@@ -1,37 +1,54 @@
 public class User
 {
-    private int c_id; // bruger identitet
-    private String c_nam; // bruger navn
+    private int id; // bruger identitet
+    private String name; // bruger navn
     private String address; // bruger adresse
 
-    public User(String n, int i){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
+    private int MAX_NAME_LENGTH = 100; // det maksimale antal karakterer i navm
+
+    // Opret bruger
+    public User(String name, int id){
+        this.id = id;
+        if(name.isEmpty() || name.length() > MAX_NAME_LENGTH) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setC_nam(String n)
+    // Skift navn
+    public void setName(String name)
     {
-        if(n.length() < 0)
+        if(name.isEmpty())
         {
             return; //If string is invalid, we dont try to store it
         }
-        c_nam = n;
+        this.name = name;
     }
 
-    public void setA(String a)
+    // Skift adresse
+    public void setAddress(String address)
     {
-        a = a;
+        this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    // Hent ID
+    public int getId() {
+        return this.id;
+    }
 
-    public String getn(){ return c_nam; }
+    // Hent navn
+    public String getName(){
+        return this.name;
+    }
 
-    public String geta(){ return "STREETNAME"; }
+    // Hent adresse
+    public String getAddress(){
+        if (this.address != null) {
+            return this.address;
+        }
+        return "";
+    }
 
     @Override
     public boolean equals(Object o){
