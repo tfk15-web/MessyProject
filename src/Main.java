@@ -14,7 +14,7 @@ public class Main
         System.out.println(list.getUsers());
 
         try {
-            Persister.s(list.getUsers());
+            Persister.save(list.getUsers());
         } catch (Exception e) {
             System.out.println("Kunne ikke gemme brugere: " + e.getMessage());
         }
